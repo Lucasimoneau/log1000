@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>392</y>
+      <w>196</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>NumeroDeSerie
+--
+-marque:string
+-version:string
+-dateAchat:uint8_t[3]
+-nomSocieteMaintenance:string
+-descriptionsSocieteMaintenance:string
+-adresse:string
+-
+-detruire:void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>399</y>
+      <w>147</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>EquipementInfo
+--
+-nSerie : NumeroSerie
+-typeEquipement:enum
+-numero:int
+-commentaire:string
+-dossierEquipement: string
+-listeLogiciels:Logiciel**
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>392</y>
+      <w>147</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>LocalInfo
+--
+-nTelephone:int
+-dateOccupation:int
+-dimension:double
+-nLocal:int
+-nEtage:int
+-occupe:bool
+-
+-estOccupe():bool
+-occuperLocal():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>371</x>
+      <y>245</y>
+      <w>182</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Entreprise
+--
+-listeClients:client**
+-nombreLocaux:int
+-nombreEtage:int
+-listeEmployes:employe**
+-
+-payerEmploye():void
+-faireReservation():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>399</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+-nom:string
+-nTelephone:int
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>112</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>EmployePermanent
+--
+-dateEmbauche:int (date)
+-salaire:double
+-superviseur:Superviseur*
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>112</y>
+      <w>147</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>EmployeContractuel
+--
+-dateDebut:date
+-dateFinContrat:date
+-dureeContrat:date
+-nomFirme:string
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>343</y>
+      <w>56</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=2000..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>427</y>
+      <w>147</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..1</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>819</x>
+      <y>0</y>
+      <w>147</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Employe
+--
+-nom:string
+-typesEmploi: string
+-superviseur: superviseur*
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>343</y>
+      <w>35</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=50</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>826</x>
+      <y>280</y>
+      <w>182</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Superviseur
+--
+-listeEmployesSupervises:Employe**
+-
+-ajouterPersonneSupervise():void
+-EnleverPersonneSupervise():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>637</x>
+      <y>280</y>
+      <w>147</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>directeurGeneral
+--
+-nom:string
+-types d emploi: string
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>805</x>
+      <y>56</y>
+      <w>91</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>889</x>
+      <y>56</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>868</x>
+      <y>175</y>
+      <w>21</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>196</x>
+      <y>301</y>
+      <w>189</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..n</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>35</y>
+      <w>343</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;300.0;10.0;10.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>560</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ReservationLocal
+--
+-LocalInformatique:LocalInfo
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>567</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ReservationEquipement
+--
+-equipementInfo:EquipementInfo
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>658</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
+-dateDebut:date
+-dateFin:date
+-typeEquipement:enum
+-nomClientEmploye:string
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>602</y>
+      <w>56</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>609</y>
+      <w>77</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>497</y>
+      <w>42</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..1</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>371</x>
+      <y>497</y>
+      <w>42</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..1</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>301</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>462</y>
+      <w>189</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>250.0;330.0;10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>161</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>119</y>
+      <w>182</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>ResponsableEquipements
+--
+-listeEquipement: EquipementInfo**
+-listeLogicielsEntreprise:Logiciel**
+-
+-informationEquipement():void
+-informationEtat():void
+-ajouterCommentaireEquipement():void
+-ajouterLogiciel():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>707</x>
+      <y>546</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>logiciel
+--
+-nom:string
+-version:string
+-numeroCle:string
+-type:enum
+-description:string
+-
+-update():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>455</y>
+      <w>203</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..n
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0;100.0;90.0;250.0;90.0;250.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>21</y>
+      <w>595</w>
+      <h>693</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;960.0;830.0;960.0;830.0;10.0;640.0;10.0</additional_attributes>
+  </element>
+</diagram>
